@@ -4,29 +4,21 @@ import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
-  ManyToOne,
-  JoinColumn,
 } from 'typeorm';
 
-import User from './User';
-
-@Entity('links')
-class Link {
+@Entity('users')
+class User {
   @PrimaryGeneratedColumn('uuid')
   id: string;
-
-  @Column()
-  user_id: string;
-
-  @ManyToOne(() => User)
-  @JoinColumn({ name: 'user_id' })
-  user: User;
 
   @Column()
   name: string;
 
   @Column()
-  url: string;
+  email: string;
+
+  @Column()
+  password: string;
 
   @CreateDateColumn()
   created_at: Date;
@@ -35,4 +27,4 @@ class Link {
   updated_at: Date;
 }
 
-export default Link;
+export default User;

@@ -5,7 +5,11 @@ import Link from '../models/Link';
 
 import CreateLinkService from '../services/CreateLinkService';
 
+import ensureAuthenticated from '../middleware/ensureAuthenticated';
+
 const linksRouter = Router();
+
+linksRouter.use(ensureAuthenticated);
 
 linksRouter.get('/', async (request, response) => {
   const linksRepository = getRepository(Link);
@@ -16,11 +20,12 @@ linksRouter.get('/', async (request, response) => {
 
 linksRouter.post('/', async (request, response) => {
   try {
-    const { name, url } = request.body;
+    const { user_id, name, url } = request.body;
 
     const createLink = new CreateLinkService();
 
     const link = await createLink.execute({
+      user_id,
       name,
       url,
     });
