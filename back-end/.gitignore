@@ -1,1 +1,7 @@
-node_modules
+.vscode/
+node_modules/
+build/
+
+# o gitkeep permite que somente os arquivos dentro da pasta temp
+tmp/*
+!tmp/.gitkeep
