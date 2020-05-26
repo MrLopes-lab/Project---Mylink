@@ -1,30 +1,30 @@
 import React, { useState, FormEvent } from 'react';
 
-import { Form } from './styles';
-import api from '../../services/api';
+// import { Link } from 'react-router-dom';
+import { Header, Login } from './styles';
+import logoImg from '../../assets/Logo.svg';
+// import api from '../../services/api';
 
-interface SessionUser {
-  token: string;
-}
+// interface SessionUser {
+//   token: string;
+// }
 
 const Session: React.FC = () => {
-  const [newSession, setNewSession] = useState('');
-  const [session, setSession] = useState<SessionUser>();
-
-  async function handleCreateSession(
-    event: FormEvent<HTMLFormElement>,
-  ): Promise<void> {
-    const response = await api.post;
-  }
-
   return (
     <>
-      <Form>
-        <input placeholder="User" />
-        <input type="password" placeholder="Password" />
+      <Header>
+        <img src={logoImg} alt="MyLink" />
+      </Header>
+      <Login>
+        <span>FAÇA SEU LOGIN</span>
 
-        <button type="submit">Submit</button>
-      </Form>
+        <input placeholder="User" required />
+        <input type="password" placeholder="Password" required />
+
+        <div>
+          <button type="submit">ENTRAR</button>
+        </div>
+      </Login>
     </>
   );
 };
