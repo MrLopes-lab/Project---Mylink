@@ -1,15 +1,16 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+// import { BrowserRouter } from 'react-router-dom';
+// import Routes from './router';
+
+import SingIn from './pages/SingIn';
 
 import GlobalStyle from './styles/global';
-import Routes from './router';
 
 const App: React.FC = () => (
   <>
-    <BrowserRouter>
-      <Routes />
-    </BrowserRouter>
     <GlobalStyle />
+
+    <SingIn />
   </>
 );
 
