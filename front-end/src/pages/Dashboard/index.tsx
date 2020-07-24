@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Title, CreateLinkButton } from './styles';
+import Header from '../../components/Header';
+import { Container, Title, CreateLinkButton } from './styles';
 
 // import api from '../../services/api';
 
@@ -8,13 +9,14 @@ import { Title, CreateLinkButton } from './styles';
 
 const Dashboard: React.FC = () => {
   return (
-    <>
+    <Container>
+      <Header />
       <Title>Crie seus links</Title>
 
       <CreateLinkButton>
         <button type="button">NOVO BOTÃO / LINK </button>
       </CreateLinkButton>
-    </>
+    </Container>
   );
 };
 

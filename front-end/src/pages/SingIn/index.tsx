@@ -18,7 +18,7 @@ const Session: React.FC = () => {
   return (
     <Container>
       <Content>
-        <img src={logoImg} alt="Mylink" />
+        <img src={logoImg} alt="MyLink" />
 
         <Form ref={formRef} onSubmit={() => {}}>
           <h1>Faça seu Login</h1>

@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { shade } from 'polished';
 
+export const Container = styled.div``;
+
 export const Title = styled.h1`
   font-size: 48px;
   color: #f0f0f5;
